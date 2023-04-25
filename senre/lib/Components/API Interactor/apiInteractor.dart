@@ -1,3 +1,6 @@
 part of senre;
 
-class APIInteractor {}
+class APIInteractor {
+
+  VoidCallback co
+}

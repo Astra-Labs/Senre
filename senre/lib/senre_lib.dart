@@ -1,5 +1,9 @@
 library senre;
 
+import 'dart:html';
+
+import 'package:flutter/material.dart';
+
 // ----- COMPONENTS
 part 'Components/API Interactor/apiInteractor.dart';
 part 'Components/Event Tracking/eventTracking.dart';
