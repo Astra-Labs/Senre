@@ -1,6 +1,7 @@
 part of senre;
 
 class APIInteractor {
-
-  VoidCallback co
+  Future<void> uploadDataToAPI() async {
+    //
+  }
 }
