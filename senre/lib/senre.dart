@@ -1,28 +1,26 @@
 part of senre;
 
-/// [ResourceObject] is the main encapsulation to interact with the
-/// entire analytics options. It's also where someone sets all of their
-/// variables to interact with Senre.
+/// A wrapper class of the entire analytics library. These are
+/// the only commands you'll need to directly interact with Senre.
 
-class ResourceObject {
-  /// The name of the resource
-  final String resourceName;
+class SenreAnalytics {
+  /// Your resource object, that acts as a representation of your app.
+  ResourceObject currentResource;
 
-  /// The ID linked to it in a DB
-  final String resourceID;
+  SenreAnalytics({required this.currentResource});
 
-  /// A temporary cache of intervention items. This is reset with every user session.
-  /// You must save this data somewhere in the application life cycle for persistence.
-  List<ExperienceItem> interventions = [];
+  /// Adds an [InterventionEventItem] to your resource object interventions cache.
+  void addInterventionEvent(InterventionEventItem interventionEvent) {
+    currentResource.interventions.add(interventionEvent);
+  }
 
-  /// Temp cache of tool events
-  List<CoreToolEventItem> tools = [];
+  /// Adds an [ExperienceEventItem] to your resource object event experience cache.
+  void addExperienceEvent(ExperienceEventItem experienceEvent) {
+    currentResource.experiences.add(experienceEvent);
+  }
 
-  /// Temp cache of experience items
-  List<ExperienceItem> experiences = [];
-
-  ResourceObject({
-    required this.resourceName,
-    required this.resourceID,
-  });
+  /// Adds an [CoreToolEventItem] to your resource object core tool cache.
+  void addCoreToolUsage(CoreToolEventItem coreToolEvent) {
+    currentResource.tools.add(coreToolEvent);
+  }
 }

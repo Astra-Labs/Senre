@@ -15,4 +15,15 @@ class CoreToolEventItem extends EventItem {
           type: eventType.toolUse,
           timestamp: timestamp,
         );
+
+  CoreToolEventItem.fromJson(Map<String, dynamic> json)
+      : toolID = json[''],
+        timeSpent = json[''];
+
+  Map<String, dynamic> toJson() => {
+        'eventID': eventId,
+        'timestamp': timestamp,
+        'toolID': toolID,
+        'timeSpent': timeSpent,
+      };
 }

@@ -20,4 +20,15 @@ class EventItem {
     required this.type,
     required this.timestamp,
   });
+
+  EventItem.fromJson(Map<String, dynamic> json)
+      : eventId = json['eventId'],
+        type = json['type'],
+        timestamp = json['timestamp'];
+
+  Map<String, dynamic> toJson() => {
+        'eventID': eventId,
+        'timestamp': timestamp,
+        'type': type,
+      };
 }
